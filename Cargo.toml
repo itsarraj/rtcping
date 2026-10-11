@@ -1,0 +1,31 @@
+[package]
+name = "rtcping"
+version = "0.1.0"
+edition = "2021"
+description = "WebRTC STUN connectivity tester, NAT traversal classifier, and reflexive candidate latency benchmark"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/rtcping"
+readme = "README.md"
+keywords = ["webrtc", "stun", "nat", "ping", "networking"]
+categories = ["command-line-utilities", "network-programming", "development-tools"]
+
+[lib]
+name = "rtcping"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rtcping"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+tokio = { version = "1", features = ["full"] }
+colored = "2"
+rand = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full", "test-util"] }
